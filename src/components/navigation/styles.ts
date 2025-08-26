@@ -5,14 +5,22 @@ export const Nav = styled.nav`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 9rem;
     padding: 1.5rem;
 `;
 
 export const NavItem = styled.div`
-    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1rem;
     background-color: ${colors.outline};
     font-weight: bold;
     color: ${colors.primary};
     border-radius: 10px;
+
+    i {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
 `;
