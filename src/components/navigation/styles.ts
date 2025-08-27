@@ -19,6 +19,12 @@ export const NavItem = styled.div`
     color: ${colors.primary};
     border-radius: 10px;
 
+    &:hover {
+        background-color: ${colors.primary};
+        color: ${colors.background};
+        cursor: pointer;
+    }
+
     i {
         font-size: 1.5rem;
         font-weight: 500;

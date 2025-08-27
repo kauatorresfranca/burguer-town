@@ -8,5 +8,8 @@ export const BannerContainer = styled.div`
 
 export const BannerImg = styled.img`
     width: 100%;
-    height: auto;
+    height: 320px;
+    object-fit: cover;
+    filter: brightness(0.9);
+    border-radius: 10px;
 `;
