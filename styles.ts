@@ -23,6 +23,10 @@ export const GlobalStyle = createGlobalStyle`
         font-family: rubik, sans-serif;
     }
 
+    body {
+        background-color: ${colors.background};
+    }
+
     ul {
         list-style: none;
     }

@@ -14,10 +14,10 @@ export const NavItem = styled.div`
     align-items: center;
     gap: 0.5rem;
     padding: 0.7rem 1rem;
-    background-color: ${colors.outline};
     font-weight: bold;
     color: ${colors.primary};
     border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
     &:hover {
         background-color: ${colors.primary};

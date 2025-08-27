@@ -3,6 +3,7 @@ import * as S from './styles'
 import Banner from '../../components/banner/index';
 import Navigation  from '../../components/navigation/index.';
 import Restaurant from '../../components/restaurant';
+import Cart from '../../components/cart';
 
 const Home = () => {
     return (
@@ -14,7 +15,7 @@ const Home = () => {
                     <Restaurant />
                 </S.Main>
                 <S.Aside>
-                    carrinho
+                    <Cart />
                 </S.Aside>
             </S.Layout>
         </>

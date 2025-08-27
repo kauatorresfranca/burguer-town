@@ -1,31 +1,17 @@
 import styled from "styled-components"
-import { colors } from "../../../styles";
 
 export const Layout = styled.div`
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 6fr 2fr;
     gap: 2rem;
 `;
 
 export const Main = styled.main`
     border-radius: 10px;
     position: relative;
-
-    img {
-        position: absolute;
-        transform: translate(0, -30%);
-        top: 0;
-        left: 40px;
-        width: 148px;
-        height: 148px;
-        padding: 0.2rem;
-        background-color: ${colors.background};
-        border-radius: 10px;
-    }
 `;
 
 export const Aside = styled.aside`
-    padding: 2rem;
-    background-color: #e2cfcfff;
+    padding-top: 1.5rem;
     border-radius: 10px;
 `;

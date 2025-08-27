@@ -4,7 +4,19 @@ import { colors } from "../../../styles";
 export const Restaurant = styled.div`
     display: flex;
     align-items: center;
-    background-color: ${colors.background};
+
+    img {
+        position: absolute;
+        transform: translate(0, -30%);
+        top: 0;
+        left: 40px;
+        width: 148px;
+        height: 148px;
+        padding: 0.2rem;
+        background-color: ${colors.background};
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 `;
 
 export const RestaurantInfo = styled.div`
@@ -30,9 +42,24 @@ export const RestaurantInfoDetails = styled.div`
 
     p {
         color: ${colors.text};
+        font-size: 0.9rem;
+        font-weight: 400;
 
-        &#horario {
+        //paragrafo de horario
+        &#time {
             color: #10b981;
+        }
+
+        //paragrafo de localizacao
+        &#location {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        //paragrafo de mais informacoes
+        &#more-info {
+            font-weight: 600;
         }
     }
 `;
