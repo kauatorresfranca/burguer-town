@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import * as S from './styles';
 
 const navItems = [
@@ -8,11 +9,14 @@ const navItems = [
 ];
 
 const Navigation = () => {
+
+    const [activeItem, setActiveItem] = useState<string | null>("Inicio");
+
     return (
         <S.Nav>
             {
                 navItems.map((item) => (
-                    <S.NavItem key={item.label}>
+                    <S.NavItem key={item.label} className={activeItem === item.label ? "active" : ""} onClick={() => setActiveItem(item.label)}>
                         <i className={item.icon}></i>{item.label}
                     </S.NavItem>
                 ))

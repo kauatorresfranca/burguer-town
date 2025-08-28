@@ -38,6 +38,7 @@ export const RestaurantInfo = styled.div`
 
 export const RestaurantInfoDetails = styled.div`
     display: flex;
+    align-items: center;
     gap: 1rem;
 
     p {
@@ -47,7 +48,8 @@ export const RestaurantInfoDetails = styled.div`
 
         //paragrafo de horario
         &#time {
-            color: #10b981;
+            font-weight: 500;
+            color: ${colors.green};
         }
 
         //paragrafo de localizacao
@@ -61,5 +63,10 @@ export const RestaurantInfoDetails = styled.div`
         &#more-info {
             font-weight: 600;
         }
+    }
+
+    .circle {
+        font-size: 0.5rem;
+        color: ${colors.title};
     }
 `;

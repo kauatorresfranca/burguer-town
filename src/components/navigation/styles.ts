@@ -15,9 +15,14 @@ export const NavItem = styled.div`
     gap: 0.5rem;
     padding: 0.7rem 1rem;
     font-weight: bold;
-    color: ${colors.primary};
+    color: ${colors.text};
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    &.active {
+        background-color: ${colors.primary};
+        color: ${colors.background};
+    }
 
     &:hover {
         background-color: ${colors.primary};

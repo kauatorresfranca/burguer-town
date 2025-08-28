@@ -13,6 +13,8 @@ export const colors = {
     title: "#333333",
     text: "#666666",
     outline: "#CCCCCC",
+    green: "#10b981",
+    red: "#FF0000",
 };
 
 export const GlobalStyle = createGlobalStyle`
