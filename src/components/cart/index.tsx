@@ -1,6 +1,23 @@
 import * as S from './styles';
 import hamburguer from '../../assets/hamburguer.jpg';
 
+const Items = [
+    {
+        id: 1,
+        title: "Hamburguer",
+        image: hamburguer,
+        price: 27.00,
+        quantity: 1
+    },
+    {
+        id: 2,
+        title: "Batata Frita",
+        image: hamburguer,
+        price: 15.00,
+        quantity: 1
+    }
+]
+
 const Cart = () => {
     return (
         <S.Cart>
@@ -15,12 +32,13 @@ const Cart = () => {
                 </S.CartDeliveryMessage>
             </S.CartDelivery>
             <S.CartItems>
-                <h3>Sua Sacola</h3>
-                <S.CartItem>
+                <h3>Sua Sacola (2)</h3>
+                {Items.map(item => (
+                    <S.CartItem key={item.id}>
                     <S.FirstLine>
                         <S.CartItemImageGroup>
-                            <S.CartItemImage src={hamburguer} alt="Product Image" />
-                            <S.CartItemTitle>Product Title</S.CartItemTitle>
+                            <S.CartItemImage src={item.image} alt="Product Image" />
+                            <S.CartItemTitle>{item.title}</S.CartItemTitle>
                         </S.CartItemImageGroup>
                         <i className="ri-delete-bin-line delete"></i>
                     </S.FirstLine>
@@ -30,10 +48,35 @@ const Cart = () => {
                             1
                             <i className="ri-add-line"></i>
                         </S.CartItemQuantity>
-                        <S.CartItemPrice>R$ 27.00</S.CartItemPrice>
+                        <S.CartItemPrice>R$ {item.price.toFixed(2)}</S.CartItemPrice>
                     </S.SecondLine>
                 </S.CartItem>
+                ))}
             </S.CartItems>
+            <S.CartPrice>
+                <div>
+                    <S.CartPriceLabel>Subtotal</S.CartPriceLabel>
+                    <S.CartPriceValue>R$ 42,00</S.CartPriceValue>
+                </div>
+                <div>
+                    <S.CartPriceLabel>Taxa de Entrega</S.CartPriceLabel>
+                    <S.CartPriceValue>R$ 2,00</S.CartPriceValue>
+                </div>
+                <div>
+                    <S.CartPriceLabel>Total</S.CartPriceLabel>
+                    <S.CartPriceValue>R$ 44,00</S.CartPriceValue>
+                </div>
+            </S.CartPrice>
+            <S.CartCoupon>
+                <S.CartCouponContent>
+                    <i className="ri-coupon-line coupon"></i>
+                    <S.CartCouponTitleGroup>
+                        <S.CartCouponTitle>Que tal um cupom ?</S.CartCouponTitle>
+                        <S.CartCouponText>1 cupom disponível</S.CartCouponText>
+                    </S.CartCouponTitleGroup>
+                </S.CartCouponContent>
+                <i className="ri-arrow-right-s-line arrow"></i>
+            </S.CartCoupon>
         </S.Cart>
     );
 };

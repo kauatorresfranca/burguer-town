@@ -28,7 +28,7 @@ export const CartDeliveryFreight = styled.div`
     }
 
     i {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
 
         &.location {
             color: ${colors.text};
@@ -48,7 +48,7 @@ export const CartDeliveryMessage = styled.p`
     border-top: 1px dashed ${colors.outline};
     border-bottom: 1px dashed ${colors.outline};
     color: ${colors.text};
-    font-size: 0.7rem;
+    font-size: 0.72rem;
 
     span {
         color: ${colors.green};
@@ -71,8 +71,16 @@ export const CartItems = styled.div`
     flex-direction: column;
     padding: 0.8rem;
     gap: 0.5rem;
-    height: 360px;
+    min-height: 100px;
+    height: auto;
     width: 100%;
+
+    h3 {
+        color: ${colors.title};
+        font-size: 1rem;
+        font-weight: 500;
+    
+    }
 `;
 
 export const CartItem = styled.div`
@@ -152,4 +160,66 @@ export const SecondLine = styled.div`
             cursor: pointer;
         }
     }
+`;
+
+export const CartPrice = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 0.8rem;
+    gap: 0.5rem;
+    border-top: 1px dashed ${colors.outline};
+    border-bottom: 1px dashed ${colors.outline};
+
+    div {
+        display: flex;
+        justify-content: space-between;
+    }
+`;
+
+export const CartPriceLabel = styled.p`
+    color: ${colors.text};
+    font-size: 0.8rem;
+`;
+
+export const CartPriceValue = styled.p`
+    color: ${colors.title};
+    font-size: 0.8rem;
+    font-weight: 500;
+`;
+
+export const CartCoupon = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem;
+    border-top: 1px dashed ${colors.outline};
+    border-bottom: 1px dashed ${colors.outline};
+
+    i {
+        font-size: 1.4rem;
+        color: ${colors.text};
+    }
+`;
+
+export const CartCouponTitle = styled.h4`
+    color: ${colors.title};
+    font-size: 0.8rem;
+    font-weight: 500;
+`;
+
+export const CartCouponContent = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+`;
+
+export const CartCouponTitleGroup = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+`;
+
+export const CartCouponText = styled.p`
+    color: ${colors.text};
+    font-size: 0.7rem;
 `;
