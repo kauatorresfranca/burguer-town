@@ -174,6 +174,12 @@ export const CartPrice = styled.div`
         display: flex;
         justify-content: space-between;
     }
+
+    .total {
+        color: ${colors.title};
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
 `;
 
 export const CartPriceLabel = styled.p`
@@ -182,9 +188,8 @@ export const CartPriceLabel = styled.p`
 `;
 
 export const CartPriceValue = styled.p`
-    color: ${colors.title};
+    color: ${colors.text};
     font-size: 0.8rem;
-    font-weight: 500;
 `;
 
 export const CartCoupon = styled.div`
@@ -222,4 +227,8 @@ export const CartCouponTitleGroup = styled.div`
 export const CartCouponText = styled.p`
     color: ${colors.text};
     font-size: 0.7rem;
+`;
+
+export const CartCheckout = styled.div`
+    padding: 1rem 0.8rem 0 0.8rem;
 `;

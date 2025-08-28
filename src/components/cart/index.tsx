@@ -1,5 +1,6 @@
 import * as S from './styles';
 import hamburguer from '../../assets/hamburguer.jpg';
+import Button from '../button';
 
 const Items = [
     {
@@ -63,8 +64,8 @@ const Cart = () => {
                     <S.CartPriceValue>R$ 2,00</S.CartPriceValue>
                 </div>
                 <div>
-                    <S.CartPriceLabel>Total</S.CartPriceLabel>
-                    <S.CartPriceValue>R$ 44,00</S.CartPriceValue>
+                    <S.CartPriceLabel className='total'>Total</S.CartPriceLabel>
+                    <S.CartPriceValue className='total'>R$ 44,00</S.CartPriceValue>
                 </div>
             </S.CartPrice>
             <S.CartCoupon>
@@ -77,6 +78,9 @@ const Cart = () => {
                 </S.CartCouponContent>
                 <i className="ri-arrow-right-s-line arrow"></i>
             </S.CartCoupon>
+            <S.CartCheckout>
+                <Button>Finalizar Compra</Button>
+            </S.CartCheckout>
         </S.Cart>
     );
 };
