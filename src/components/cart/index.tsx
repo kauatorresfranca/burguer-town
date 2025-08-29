@@ -1,19 +1,19 @@
 import * as S from './styles';
-import hamburguer from '../../assets/hamburguer.jpg';
+import hamburguerImage from '../../assets/hamburguer.jpg';
 import Button from '../button';
 
-const Items = [
+const CartItems = [
     {
         id: 1,
         title: "Hamburguer",
-        image: hamburguer,
+        image: hamburguerImage,
         price: 27.00,
         quantity: 1
     },
     {
         id: 2,
         title: "Batata Frita",
-        image: hamburguer,
+        image: hamburguerImage,
         price: 15.00,
         quantity: 1
     }
@@ -34,7 +34,7 @@ const Cart = () => {
             </S.CartDelivery>
             <S.CartItems>
                 <h3>Sua Sacola (2)</h3>
-                {Items.map(item => (
+                {CartItems.map(item => (
                     <S.CartItem key={item.id}>
                     <S.FirstLine>
                         <S.CartItemImageGroup>

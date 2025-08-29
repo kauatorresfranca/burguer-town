@@ -4,6 +4,7 @@ import { colors } from "../../../styles";
 export const Restaurant = styled.div`
     display: flex;
     align-items: center;
+    padding-bottom: 2rem;
 
     img {
         position: absolute;

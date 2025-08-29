@@ -90,6 +90,11 @@ export const CartItem = styled.div`
     padding: 0.5rem;
     border-radius: 10px;
     border: 1px solid ${colors.outline};
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 `;
 
 export const CartItemImage = styled.img`
@@ -203,6 +208,10 @@ export const CartCoupon = styled.div`
     i {
         font-size: 1.4rem;
         color: ${colors.text};
+
+        &.arrow {
+            color: ${colors.primary}
+        }
     }
 `;
 

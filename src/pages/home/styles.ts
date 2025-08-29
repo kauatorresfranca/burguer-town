@@ -12,6 +12,8 @@ export const Main = styled.main`
 `;
 
 export const Aside = styled.aside`
+    position: sticky;
+    top: 0;
     padding-top: 1.5rem;
     border-radius: 10px;
 `;
