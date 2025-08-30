@@ -1,12 +1,23 @@
 import Home from './pages/home/index'
+import { Route, Routes } from 'react-router-dom'
+import Orders from './pages/orders'
+import Navigation from './components/navigation/index.'
+import { Provider } from 'react-redux'
+import { store } from './store'
 
 function App() {
 
   return (
     <div className="container">
-        <Home />
+      <Provider store={store}>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/pedidos" element={<Orders />} />
+        </Routes>
+      </Provider>
     </div>
   )
 }
-
+  
 export default App
