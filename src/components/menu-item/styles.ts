@@ -49,3 +49,27 @@ export const MenuItemPrice = styled.p`
   font-weight: 600;
   color: ${colors.text};
 `;
+
+export const ModalContent = styled.div`
+  padding: 2rem;
+`;
+
+export const ModalTitle = styled.h3`
+  color: ${colors.title};
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0;
+`;
+
+export const ModalDescription = styled.p`
+  margin-top: 1rem;
+  font-weight: 200;
+  font-size: 14px;
+  color: ${colors.text};
+`;
+
+export const ModalPrice = styled.p`
+  font-size: 16px;
+  font-weight: 600;
+  color: ${colors.text};
+`;

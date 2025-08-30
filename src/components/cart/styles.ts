@@ -97,6 +97,29 @@ export const CartItem = styled.div`
     }
 `;
 
+export const CartItemsTitle = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h3 {
+        color: ${colors.title};
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    p {
+        color: ${colors.text};
+        font-size: 0.8rem;
+        font-weight: 500;
+
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+`;
+
 export const CartItemImage = styled.img`
     width: 50px;
     height: 50px;
@@ -129,6 +152,21 @@ export const CartItemQuantity = styled.div`
 export const CartItemPrice = styled.p`
     color: ${colors.text};
     font-size: 0.8rem;
+`;
+
+export const EmptyCartMessage = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    color: ${colors.text};
+    font-size: 0.8rem;
+
+    i {
+        font-size: 2.5rem;
+    }
 `;
 
 export const FirstLine = styled.div`
