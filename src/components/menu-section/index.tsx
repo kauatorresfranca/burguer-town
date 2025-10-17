@@ -10,10 +10,7 @@ type MenuItemType = {
 };
 
 type MenuSectionProps = {
-  Sections: {
-    name: string;
-    items: MenuItemType[];
-  }[];
+  Sections: { name: string; items: MenuItemType[] }[];
 };
 
 const MenuSection = ({ Sections }: MenuSectionProps) => {

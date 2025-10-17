@@ -51,7 +51,23 @@ export const MenuItemPrice = styled.p`
 `;
 
 export const ModalContent = styled.div`
-  padding: 2rem;
+  display: flex;
+  align-items: flex-start;
+  height: 424px;
+  width: 100%;
+  gap: 2rem;
+`;
+
+export const ModalContentInfo = styled.div`
+  position: relative;
+  height: 100%;
+  width: 370px;
+`;
+
+export const ModalImage = styled.img`
+  width: 384px;
+  height: 384px;
+  border-radius: 8px;
 `;
 
 export const ModalTitle = styled.h3`
@@ -72,4 +88,14 @@ export const ModalPrice = styled.p`
   font-size: 16px;
   font-weight: 600;
   color: ${colors.text};
+`;
+
+export const ModalButtonGroup = styled.div`
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;

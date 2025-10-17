@@ -4,6 +4,7 @@ import Orders from './pages/orders'
 import Navigation from './components/navigation/index.'
 import { Provider } from 'react-redux'
 import { store } from './store'
+import Admin from './pages/admin'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/pedidos" element={<Orders />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </Provider>
     </div>

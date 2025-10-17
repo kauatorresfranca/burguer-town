@@ -1,76 +1,30 @@
-import * as S from './styles'
-
-import Banner from '../../components/banner/index';
+import { useState, useEffect } from 'react';
+import * as S from './styles';
+import Banner from '../../components/banner';
 import Restaurant from '../../components/restaurant';
 import Cart from '../../components/cart';
-import MenuSection from '../../components/menu-section/index';
-import hamburgerImage from '../../assets/hamburguer.jpg'
+import MenuSection from '../../components/menu-section';
 
-const Sections = [
-    {
-        id: 1,
-        name: 'Menu',
-        items: [
-            {
-                id: 1,
-                title: "Hamburger da Galera",
-                description: "This is a delicious hamburger.",
-                price: 27.00,
-                image: hamburgerImage
-            },
-            {
-                id: 2,
-                title: "Batata Frita",
-                description: "Crispy french fries.",
-                price: 15.00,
-                image: hamburgerImage
-            },
-            {
-                id: 3,
-                title: "Refrigerante",
-                description: "Chilled soft drink.",
-                price: 10.00,
-                image: hamburgerImage
-            }
-        ]
-    },
-    {
-        id: 2,
-        name: 'Bebidas',
-        items: [
-            {
-                id: 1,
-                title: "Coca-Cola",
-                description: "Refreshing soft drink.",
-                price: 10.00,
-                image: hamburgerImage
-            },
-            {
-                id: 2,
-                title: "Suco de Laranja",
-                description: "Freshly squeezed orange juice.",
-                price: 12.00,
-                image: hamburgerImage
-            },
-            {
-                id: 3,
-                title: "Água Mineral",
-                description: "Pure mineral water.",
-                price: 5.00,
-                image: hamburgerImage
-            }
-        ]
-    }
-];
+type MenuItemType = { id: number; title: string; description: string; price: number; image: string };
+type SectionType = { name: string; items: MenuItemType[] };
 
 const Home = () => {
+    const [sections, setSections] = useState<SectionType[]>([]);
+
+    useEffect(() => {
+        fetch('http://127.0.0.1:8000/api/sections') // Corrigido para o endpoint correto
+            .then(response => response.json())
+            .then(data => setSections(data))
+            .catch(error => console.error('Erro ao carregar seções:', error));
+    }, []);
+
     return (
         <>
             <Banner />
             <S.Layout>
-                <S.Main >
+                <S.Main>
                     <Restaurant />
-                    <MenuSection Sections={Sections} />
+                    <MenuSection Sections={sections} />
                 </S.Main>
                 <S.Aside>
                     <Cart />
