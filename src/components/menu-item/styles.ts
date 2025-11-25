@@ -38,10 +38,10 @@ export const MenuItemDescription = styled.p`
 `;
 
 export const MenuItemTitleGroup = styled.div`
-  display: flex;
+  display: flex;  
   flex-direction: column;
-  gap: 4.6rem;
-  height: 100%;
+  gap: 3.5rem;
+  max-height: 128px;
 `
 
 export const MenuItemPrice = styled.p`

@@ -5,6 +5,8 @@ import Navigation from './components/navigation/index.'
 import { Provider } from 'react-redux'
 import { store } from './store'
 import Admin from './pages/admin'
+import Account from './pages/account'
+import Checkout from './pages/checkout'
 
 function App() {
 
@@ -15,7 +17,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/pedidos" element={<Orders />} />
+          <Route path="/conta" element={<Account />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </Provider>
     </div>

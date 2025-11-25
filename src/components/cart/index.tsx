@@ -3,10 +3,11 @@ import Button from '../button';
 import { useSelector, useDispatch } from 'react-redux';
 import type { RootState } from '../../store';
 import { removeItem, increaseQty, decreaseQty, selectCartItems, selectCartTotal, clearCart } from '../../features/cart/cartSlice';
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
   const dispatch = useDispatch();
-
+  const Navigate = useNavigate();
   // pega os itens e o subtotal
   const cartItems = useSelector((state: RootState) => selectCartItems(state));
   const subtotal = useSelector((state: RootState) => selectCartTotal(state));
@@ -14,6 +15,11 @@ const Cart = () => {
   // regra da taxa de entrega
   const deliveryFee = subtotal >= 50 ? 0 : 2;
   const total = subtotal + deliveryFee;
+
+
+  const FinishPurchase = () => {
+    Navigate('/checkout');
+  }
 
   return (
     <S.Cart>
@@ -100,7 +106,7 @@ const Cart = () => {
       </S.CartCoupon>
 
       <S.CartCheckout>
-        <Button>Finalizar Compra</Button>
+        <Button onClick={() => FinishPurchase()}>Finalizar Compra</Button>
       </S.CartCheckout>
     </S.Cart>
   );
