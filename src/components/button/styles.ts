@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { colors } from "../../../styles";
 
 export const Button = styled.button`
+    display: flex;
     background-color: ${colors.primary};
     color: ${colors.background};
     width: 100%;

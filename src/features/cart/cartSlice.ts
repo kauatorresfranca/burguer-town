@@ -13,6 +13,12 @@ interface CartState {
   items: CartItem[];
 }
 
+// 📌 Interface ajustada para a ação addItem: 
+// Recebe todos os dados do item, e 'quantity' é a quantidade inicial a adicionar.
+interface AddItemPayload extends Omit<CartItem, "quantity"> {
+  quantity: number; 
+}
+
 const initialState: CartState = {
   items: [],
 };
@@ -21,14 +27,20 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addItem: (state, action: PayloadAction<Omit<CartItem, "quantity">>) => {
-      const existing = state.items.find(item => item.id === action.payload.id);
+    // Ação addItem ajustada para receber a quantidade do payload
+    addItem: (state, action: PayloadAction<AddItemPayload>) => {
+      const { id, quantity, ...rest } = action.payload;
+      const existing = state.items.find(item => item.id === id);
+
       if (existing) {
-        existing.quantity += 1;
+        // Se existir, soma a nova quantidade (ex: +3)
+        existing.quantity += quantity;
       } else {
-        state.items.push({ ...action.payload, quantity: 1 });
+        // Se for novo, adiciona com a quantidade inicial (ex: 3)
+        state.items.push({ id, ...rest, quantity });
       }
     },
+    
     removeItem: (state, action: PayloadAction<string>) => {
       state.items = state.items.filter(item => item.id !== action.payload);
     },
@@ -48,7 +60,7 @@ const cartSlice = createSlice({
   },
 });
   
-// ✅ Selectors (fora dos reducers)
+// Selectors (fora dos reducers)
 export const selectCartItems = (state: { cart: CartState }) => state.cart.items;
 export const selectCartTotal = (state: { cart: CartState }) =>
   state.cart.items.reduce((total, item) => total + item.price * item.quantity, 0);

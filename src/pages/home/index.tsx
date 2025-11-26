@@ -12,7 +12,7 @@ const Home = () => {
     const [sections, setSections] = useState<SectionType[]>([]);
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/api/sections') // Corrigido para o endpoint correto
+        fetch('http://127.0.0.1:8000/api/sections')
             .then(response => response.json())
             .then(data => setSections(data))
             .catch(error => console.error('Erro ao carregar seções:', error));

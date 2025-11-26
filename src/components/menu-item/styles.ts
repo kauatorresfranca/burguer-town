@@ -50,6 +50,11 @@ export const MenuItemPrice = styled.p`
   color: ${colors.text};
 `;
 
+export const ModalCurrentPrice = styled.span`
+  margin-left: 0.5rem;
+  font-weight: 600;
+`;
+
 export const ModalContent = styled.div`
   display: flex;
   align-items: flex-start;

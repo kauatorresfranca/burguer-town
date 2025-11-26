@@ -1,3 +1,5 @@
+// MenuItem.tsx
+
 import { useState } from 'react';
 import Modal from '../modal';
 import * as S from './styles';
@@ -15,6 +17,21 @@ type MenuItemProps = {
 const MenuItem = ({ title, description, price, image }: MenuItemProps) => {
   const dispatch = useDispatch();
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  // Estado local para a quantidade na Modal
+  const [itemQuantity, setItemQuantity] = useState(1); 
+
+  const DecreaseQty = () => {
+    if (itemQuantity > 1) {
+      setItemQuantity(itemQuantity - 1);
+    }
+  }
+
+  const increaseQty = () => {
+    // Limite de 20 é uma boa prática
+    if (itemQuantity < 20) {
+      setItemQuantity(itemQuantity + 1);
+    }
+  }
 
   const AddToCart = () => {
     dispatch(
@@ -24,9 +41,16 @@ const MenuItem = ({ title, description, price, image }: MenuItemProps) => {
         description,
         price: Number(price), // Converte para número
         image,
+        // ✅ Envia a quantidade atualizada
+        quantity: itemQuantity, 
       })
     );
+    // Fecha a modal e reseta a quantidade após adicionar
+    setModalIsOpen(false);
+    setItemQuantity(1);
   };
+
+  const currentPrice = Number(price) * itemQuantity;
 
   return (
     <>
@@ -46,14 +70,18 @@ const MenuItem = ({ title, description, price, image }: MenuItemProps) => {
           <S.ModalContentInfo>
             <S.ModalTitle>{title}</S.ModalTitle>
             <S.ModalDescription>{description}</S.ModalDescription>
-            <S.ModalPrice>R$ {Number(price).toFixed(2).replace('.', ',')}</S.ModalPrice>
+            {/* Exibe o preço unitário ou um texto descritivo */}
+            <S.ModalPrice>R$ {Number(price).toFixed(2).replace('.', ',') }</S.ModalPrice>
             <S.ModalButtonGroup>
               <div>
-                <i className="ri-subtract-line"></i>
-                1
-                <i className="ri-add-line"></i>
+                <i className="ri-subtract-line" onClick={DecreaseQty}></i>
+                {/* Exibe a quantidade local */}
+                {itemQuantity} 
+                <i className="ri-add-line" onClick={increaseQty}></i>
               </div>
-              <Button onClick={AddToCart}>Adicionar ao carrinho</Button>
+              <Button onClick={AddToCart}>
+                <>Adicionar ao carrinho <S.ModalCurrentPrice>R$ {currentPrice.toFixed(2).replace('.', ',') }</S.ModalCurrentPrice></>
+              </Button>
             </S.ModalButtonGroup>
           </S.ModalContentInfo>
         </S.ModalContent>
